@@ -18,7 +18,7 @@ class divider{
 		if($sign==-1){
 			do{
 				// $i>$this->dividend;$i--;
-				echo $i."id\n";	
+				// echo $i."id\n";	
 				$rm=0;
 				$rm=$rm+$i;
 				$check=$ans+$i;
@@ -43,7 +43,7 @@ class divider{
 		else{
 			do{
 				// $i>$this->dividend;$i--;
-				echo $i."id\n";	
+				// echo $i."id\n";	
 				$rm=0;
 				$rm=$rm+$i;
 				$check=$ans+$i;
@@ -93,7 +93,7 @@ class divider{
 				$signdiv=1;
 			endif;
 			$sign=$sign*$signdiv;
-			print_r($sign);
+			// print_r($sign);
 			if($this->dividend<0){
 				for($a=-1;$a>$this->dividend;$a--){
 					// echo "\n\n";

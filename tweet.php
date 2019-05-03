@@ -43,6 +43,7 @@ class tweet{
 		return $this->tweets;
 	}
 	protected function find ($id){
+		$id=trim($id);
 		if(count($this->tweets)<0){
 			echo "no tweet to check from";
 		}
@@ -53,18 +54,18 @@ class tweet{
 				// loop through all data from json
     			if(preg_match("/^\#/i", $id)){
     				// check if input has hash if dont add
-    				if(preg_match("/".$id."/i", $value)){
+    				if(preg_match("/".$id."[^a-z0-9]/i", $value)){
     					echo "\n\n";
     					echo $key ." tweeted:\n";
-	    				echo preg_replace("/(".$id.")/i", "<b>$1</b>", $value)."\n";
+	    				echo preg_replace("/(".$id.")[^a-z0-9]/i", "<b>$1</b>", $value)."\n";
 	    				$found=true;
 	    			}
     			}else{
-					if(preg_match("/\#".$id."/i", $value)){
+					if(preg_match("/\#".$id."[^a-z0-9]/i", $value)){
 						// check if input doesn\'t have hash if add
 						echo "\n\n";
 						echo $key ." tweeted:\n";
-	    				echo preg_replace("/(\#".$id.")/i", "<b>$1</b>", $value)."\n";
+	    				echo preg_replace("/(\#".$id.")[^a-z0-9]/i", "<b>$1</b>", $value)."\n";
 	    				$found=true;
 	    			}
     			}
